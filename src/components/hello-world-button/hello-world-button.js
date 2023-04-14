@@ -1,10 +1,11 @@
 import "./hello-world-button.scss";
 
 class HelloWorldButton {
+  buttonCssClass = "hello-world-button"; // some browser didn't support this type of css adding
   render() {
     const button = document.createElement("button");
     button.innerHTML = "Hello World";
-    button.classList.add("hello-world-button");
+    button.classList.add(this.buttonCssClass);
 
     const body = document.querySelector("body");
     body.appendChild(button);
