@@ -104,7 +104,7 @@ module.exports = __webpack_require__.p + "16ad756bda8e8a843327.jpeg";
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "";
+/******/ 		__webpack_require__.p = "./dist/";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
