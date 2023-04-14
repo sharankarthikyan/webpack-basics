@@ -1,8 +1,9 @@
 import Nature from "./nature.jpeg";
+import altText from "./alt-text.txt";
 
 function addImage() {
   const img = document.createElement("img");
-  img.alt = "nature";
+  img.alt = altText;
   img.width = "300";
   img.src = Nature;
 
