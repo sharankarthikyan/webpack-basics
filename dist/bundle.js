@@ -16,6 +16,27 @@ function helloworld() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (helloworld);
 
 
+/***/ }),
+/* 2 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function addImage() {
+  const img = document.createElement("img");
+  img.alt = "nature";
+  img.width = "300px";
+  img.src = "./nature.jpeg";
+
+  const body = document.querySelector("body");
+  body.appendChild(img);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addImage);
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -78,9 +99,12 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _add_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+
 
 
 (0,_helloworld__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_add_image__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
 })();
 
