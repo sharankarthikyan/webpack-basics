@@ -14,6 +14,11 @@ module.exports = {
     publicPath: "",
   },
   mode: "production",
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   module: {
     rules: [
       {
@@ -21,7 +26,7 @@ module.exports = {
         type: "asset",
         parser: {
           dataUrlCondition: {
-            maxSize: 1000 * 1024, // 1000 kilobytes
+            maxSize: 244 * 1024, // 1000 kilobytes
           },
         },
       },
