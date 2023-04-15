@@ -6,3 +6,9 @@ heading.render("nature");
 
 const natureImg = new NatureImage();
 natureImg.render();
+
+import("HelloWorldApp/HelloWorldButton").then((HelloWorldButtonModule) => {
+  const HelloWorldButton = HelloWorldButtonModule.default;
+  const helloWorldButton = new HelloWorldButton();
+  helloWorldButton.render();
+});
