@@ -2,6 +2,7 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -48,10 +49,12 @@ module.exports = {
     ],
   },
   plugins: [
-    new TerserPlugin(),
+    new TerserPlugin(), // Minify the js file - it will compress
     new MiniCssExtractPlugin({
+      // It will give us sperate file for css. If you don't specify it, then this css will on js file
       filename: "style.[contenthash].css",
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(), // This helps to clean the dist folder, because it is specified in output.path
+    new HtmlWebpackPlugin(), // This will create a new index.html with newly updated js and css file [contenthash].
   ],
 };
