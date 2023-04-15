@@ -17,6 +17,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: "all",
+      minSize: 3000, // 3 KB
     },
   },
   module: {
@@ -26,7 +27,7 @@ module.exports = {
         type: "asset",
         parser: {
           dataUrlCondition: {
-            maxSize: 244 * 1024, // 1000 kilobytes
+            maxSize: 244 * 1024, // 244 kilobytes
           },
         },
       },
