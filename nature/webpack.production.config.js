@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
   entry: "./src/nature.js",
@@ -62,5 +63,11 @@ module.exports = {
       description: "Nature Description",
       minify: false,
     }), // This will create a new nature.html with newly updated js and css file [contenthash].
+    new ModuleFederationPlugin({
+      name: "NatureApp",
+      remotes: {
+        HelloWorldApp: "HelloWorldApp@http://localhost:3000/remoteEntry.js",
+      },
+    }),
   ],
 };
