@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "",
+    publicPath: "../",
   },
   mode: "none",
   module: {
@@ -55,6 +55,12 @@ module.exports = {
       filename: "style.[contenthash].css",
     }),
     new CleanWebpackPlugin(), // This helps to clean the dist folder, because it is specified in output.path
-    new HtmlWebpackPlugin(), // This will create a new index.html with newly updated js and css file [contenthash].
+    new HtmlWebpackPlugin({
+      title: "Hello World",
+      filename: "subfolder/custom_filename.html",
+      meta: {
+        description: "Some Description",
+      },
+    }), // This will create a new index.html with newly updated js and css file [contenthash].
   ],
 };
