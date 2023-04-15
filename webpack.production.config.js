@@ -17,7 +17,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: "all",
-      minSize: 3000, // 3 KB
+      minSize: 2000, // 2 KB
     },
   },
   module: {
@@ -73,7 +73,7 @@ module.exports = {
       template: "src/page-template.hbs",
       description: "Hello World Description",
       minify: false,
-    }), // This will create a new index.html with newly updated js and css file [contenthash].
+    }), // This will create a new hello-world.html with newly updated js and css file [contenthash].
     new HtmlWebpackPlugin({
       filename: "nature.html",
       chunks: ["nature"],
@@ -81,6 +81,6 @@ module.exports = {
       template: "src/page-template.hbs",
       description: "Nature Description",
       minify: false,
-    }), // This will create a new index.html with newly updated js and css file [contenthash].
+    }), // This will create a new nature.html with newly updated js and css file [contenthash].
   ],
 };
