@@ -46,6 +46,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.hbs$/,
+        use: ["handlebars-loader"],
+      },
     ],
   },
   plugins: [
@@ -57,9 +61,8 @@ module.exports = {
     new CleanWebpackPlugin(), // This helps to clean the dist folder, because it is specified in output.path
     new HtmlWebpackPlugin({
       title: "Hello World",
-      meta: {
-        description: "Some Description",
-      },
+      template: "src/index.hbs",
+      description: "Some Description",
     }), // This will create a new index.html with newly updated js and css file [contenthash].
   ],
 };
